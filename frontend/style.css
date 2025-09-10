@@ -1,0 +1,89 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f1f4f8;
+  background-color: #5c00b3;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #00eeff;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#ideaDisplay {
+  margin-top: 1rem;
+  background: #f9f9f9;
+  border-left: 4px solid #007bff;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 100px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+#loader {
+  font-style: italic;
+  margin-top: 0.5rem;
+  color: #777;
+}
+.main{
+    border: 2px solid #007bff;
+    padding: 4em;
+    border-radius: 20px;
+    background-color:transparent;
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  #ideaDisplay {
+    font-size: 0.95rem;
+  }
+}

@@ -1,2 +1,7 @@
-# ignore the actual API key file
+
 backend/.env
+backend/node_modules
+backend/package-lock.json
+frontend/node_modules
+package-lock.json
+package.json

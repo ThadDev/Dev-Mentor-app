@@ -1,79 +1,161 @@
 /* styles.css */
-
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f1f4f8;
-  background-color: #5c00b3;
-  color: #222;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color-light);
+}
+:root {
+  --background-color-light: #fdf5e8;
+  --background-color-dark: #2d2d2d;
+}
+.logo {
+  font-weight: 700;
+  color: var(--background-color-dark);
+}
+header {
+  top: 0;
+  padding: 1em;
+  background-color: var(--background-color-light);
+  border-bottom: 1px solid var(--background-color-dark);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+main {
+  margin-top: 4em;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
+/* chat-function */
 
-.container {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 90%;
+.chat-container {
+  width: 100%;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  height: 90vh;
+  border: 1px solid var(--background-color-dark);
+  border-radius: 10px;
+  background: var(--background-color-light);
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #00eeff;
+.chat-area {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  background: var(--background-color-light);
 }
 
-button {
-  padding: 12px 20px;
-  margin: 10px;
-  background-color: #007bff;
+.msg {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 12px;
+  animation: fadeIn 0.3s ease-in-out;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: start;
+  font-weight: bold;
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--background-color-light);
+  color: var(--background-color-dark);
+  border: 1px solid var(--background-color-dark);
+}
+
+.ai {
+  align-self: flex-start;
+  background: transparent;
+  color: var(--background-color-dark);
+  border: 1px solid var(--background-color-dark);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+#user-input {
+  background-color: var(--background-color-light);
+  flex: 1;
+  padding: 1em;
+  border-radius: 2em;
+  border: 1px solid var(--background-color-dark);
+}
+
+#send-btn {
+  padding: 15px;
   border: none;
-  color: white;
-  font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 50%;
+  background: var(--background-color-dark);
+  color: var(--background-color-light);
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+#send-btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
 }
 
-#ideaDisplay {
-  margin-top: 1rem;
-  background: #f9f9f9;
-  border-left: 4px solid #007bff;
-  padding: 1rem;
-  border-radius: 8px;
-  min-height: 100px;
-  font-style: italic;
-  line-height: 1.6;
+#suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  justify-content: center;
+}
+#suggestions h1 {
+  color: var(--background-color-dark);
+}
+.suggestion-btn {
+  background: var(--background-color-light);
+  border: 1px solid var(--background-color-dark);
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: var(--background-color-dark);
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-#loader {
-  font-style: italic;
-  margin-top: 0.5rem;
-  color: #777;
+.suggestion-btn:hover {
+  background: var(--background-color-dark);
+  color: var(--background-color-light);
 }
-.main{
-    border: 2px solid #007bff;
-    padding: 4em;
-    border-radius: 20px;
-    background-color:transparent;
-}
-
 /* Responsive */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .container {
     padding: 1.5rem;
   }
-
+  .chat-container {
+    height: 90dvh;
+  }
   h1 {
     font-size: 1.4rem;
   }

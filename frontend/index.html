@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idea Generator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="main">
-    <h1>AI Project idea generator</h1>
-    <button id="generateBtn">Generate idea</button>
-    <p id="loader" style="display: none;">thinking...🤖</p>
-    <div id="ideaDisplay">
-        <p>Click the button to generate an idea!</p>
-
-    </div>
-    <button id="copyBtn" style="display: none;">Copy idea</button>
-
-    </button>
-</div>
-<script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevMentor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">🤖DevMentor</div>
+      <div class="theme-toggle">
+        <button
+          id="light-theme"
+          style="display: none; padding: 0%; border: none; background: none"
+        >
+          <span
+            class="iconify"
+            style="font-size: 20px; color: #fdf5e8"
+            data-icon="mdi:weather-sunny"
+          ></span>
+        </button>
+        <button
+          id="dark-theme"
+          style="padding: 0%; border: none; background: none"
+        >
+          <span
+            class="iconify"
+            data-icon="mdi:weather-night"
+            style="color: black; font-size: 20px"
+          ></span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="main chat-container">
+        <div id="suggestions" class="suggestions">
+          <h1>What can I help with?</h1>
+          <button class="suggestion-btn">
+            Give me 3 beginner-friendly frontend projects
+          </button>
+          <button class="suggestion-btn">
+            What’s the best stack for frontend development in 2025?
+          </button>
+          <button class="suggestion-btn">
+            Show me a roadmap to learn React
+          </button>
+          <button class="suggestion-btn">
+            How do I organize my first GitHub portfolio?
+          </button>
+        </div>
+        <div id="chat-area" class="chat-area"></div>
+        <div class="input-area">
+          <input id="user-input" type="text" placeholder="Ask DevMentor...." />
+          <button id="send-btn">
+            <span
+              class="iconify"
+              data-icon="mdi:arrow-up"
+              style="font-size: 20px"
+            ></span>
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>

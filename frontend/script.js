@@ -32,7 +32,9 @@ function sendMessage(text) {
 
   // Create EventSource for SSE
   const evtSource = new EventSource(
-    `http://localhost:3000/api/chat-stream?message=${encodeURIComponent(text)}`
+    `https://dev-mentor-app.onrender.com/api/chat-stream?message=${encodeURIComponent(
+      text
+    )}`
   );
 
   evtSource.onmessage = (event) => {

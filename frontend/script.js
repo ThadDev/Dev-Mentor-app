@@ -27,6 +27,13 @@ function sendMessage(text) {
 
   // Create AI message placeholder
   const aiMsg = appendMessage("ai", "");
+  let dotCount = 0;
+  const thinkingInterval = setInterval(() => {
+    dotCount = (dotCount + 1) % 4;
+    aiMsg.textContent = "🤖" + ".".repeat(dotCount);
+  }, 500);
+
+  let firstChunk = true;
 
   sendBtn.disabled = true;
 
@@ -44,6 +51,11 @@ function sendMessage(text) {
       chatArea.scrollTop = chatArea.scrollHeight;
       return;
     }
+    if (firstChunk) {
+      clearInterval(thinkingInterval);
+      aiMsg.textContent = ""; // clear "Thinking..."
+      firstChunk = false;
+    }
     aiMsg.textContent += event.data;
     chatArea.scrollTop = chatArea.scrollHeight;
   };
@@ -51,6 +63,8 @@ function sendMessage(text) {
   evtSource.onerror = (err) => {
     console.error("SSE error:", err);
     aiMsg.textContent += " ❌ Error receiving response.";
+    clearInterval(thinkingInterval);
+
     evtSource.close();
     sendBtn.disabled = false;
   };

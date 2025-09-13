@@ -59,7 +59,7 @@ main {
 }
 
 .msg {
-  max-width: 70%;
+  max-width: 80%;
   padding: 10px 15px;
   border-radius: 12px;
   animation: fadeIn 0.3s ease-in-out;
@@ -82,7 +82,7 @@ main {
   align-self: flex-start;
   background: transparent;
   color: var(--background-color-dark);
-  border: 1px solid var(--background-color-dark);
+  /* border: 1px solid var(--background-color-dark); */
 }
 
 @keyframes fadeIn {
@@ -107,6 +107,7 @@ main {
   flex: 1;
   padding: 1em;
   border-radius: 2em;
+  color: var(--background-color-dark);
   border: 1px solid var(--background-color-dark);
 }
 
